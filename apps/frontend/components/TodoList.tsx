@@ -1,10 +1,13 @@
+import { titleAtom } from '../atoms/titleState'
 import { FetchTodoDocument, UpdateTodoDocument, DeleteTodoDocument } from '../generated/apollo'
 import { useQuery, useMutation } from '@apollo/client'
+import { useRecoilValue } from 'recoil'
 
 const TodoList: React.FC = () => {
   const { data, loading, error } = useQuery(FetchTodoDocument)
   const [updateTodo] = useMutation(UpdateTodoDocument)
   const [deleteTodo] = useMutation(DeleteTodoDocument)
+  const title = useRecoilValue(titleAtom)
 
   if (loading) return <p className="text-center text-gray-500">Loading...</p>
   if (error) return <p className="text-center text-red-500">Error: {error.message}</p>
@@ -55,6 +58,7 @@ const TodoList: React.FC = () => {
           </li>
         ))}
       </ul>
+      <div>new title:{title}</div>
     </div>
   )
 }

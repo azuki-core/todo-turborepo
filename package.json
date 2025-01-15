@@ -83,7 +83,7 @@
       "eslint --fix"
     ]
   },
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.4.1+sha256.920b4530755296dc2ce8b4351f057d4a26429524fcb2789d277560d94837c27e",
   "engines": {
     "node": "20.12.1",
     "npm": "please use yarn"

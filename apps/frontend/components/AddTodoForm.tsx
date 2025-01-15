@@ -1,8 +1,10 @@
-import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { CreateTodoDocument, FetchTodoDocument } from '../generated/apollo'
+import { useRecoilState } from 'recoil'
+import { titleAtom } from '../atoms/titleState'
+
 const AddTodoForm = () => {
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useRecoilState(titleAtom)
   const [createTodo, { data, loading, error }] = useMutation(CreateTodoDocument, {
     refetchQueries: [{ query: FetchTodoDocument }],
   })

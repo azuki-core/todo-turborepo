@@ -1,0 +1,22 @@
+{
+	// このファイルは/.vscode/settings.jsonです
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.format.enable": false,
+	"editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.lineNumbers": "on",
+	"editor.rulers": [80],
+	"editor.wordWrap": "on",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"npm.packageManager": "yarn",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // prettierを用いる場合に設定
+}
