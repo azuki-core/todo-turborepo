@@ -2,10 +2,11 @@ import { useMutation } from '@apollo/client'
 import { CreateTodoDocument, FetchTodoDocument } from '../generated/apollo'
 import { useRecoilState } from 'recoil'
 import { titleAtom } from '../atoms/titleState'
+import { Button, Form, Input } from 'antd'
 
 const AddTodoForm = () => {
   const [title, setTitle] = useRecoilState(titleAtom)
-  const [createTodo, { data, loading, error }] = useMutation(CreateTodoDocument, {
+  const [createTodo] = useMutation(CreateTodoDocument, {
     refetchQueries: [{ query: FetchTodoDocument }],
   })
   const handleSubmit = async (e: React.FormEvent) => {
@@ -19,24 +20,18 @@ const AddTodoForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Enter todo title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="border px-4 py-2"
-        required
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        className="ml-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-blue-300"
-      >
-        {loading ? 'Adding...' : 'Add Todo'}
-      </button>
-      {error && <p>Error: {error.message}</p>}
-    </form>
+    <Form onFinish={handleSubmit}>
+      <div className="flex flex-cols mt-3">
+        <Form.Item name="text">
+          <Input placeholder="Enter todo title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        </Form.Item>{' '}
+        <Form.Item className="ml-1">
+          <Button type="primary" htmlType="submit">
+            Add Todo
+          </Button>
+        </Form.Item>
+      </div>
+    </Form>
   )
 }
 

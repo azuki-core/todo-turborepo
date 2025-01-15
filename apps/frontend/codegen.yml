@@ -1,5 +1,5 @@
-schema: './generated/schema.graphql'
-documents: ['./graphql/**/*.graphql']
+schema: './src/generated/schema.graphql'
+documents: ['./src/graphql/**/*.graphql']
 generates:
   ./src/generated/apollo.ts:
     config:

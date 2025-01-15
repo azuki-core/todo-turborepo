@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "build:tsc": "yarn build",
+    "db-init": "prisma init",
     "dev": "tsx watch --inspect=9229 server",
     "generate": "prisma generate && tsx --tsconfig tsconfig.json graphql/schema"
   },
