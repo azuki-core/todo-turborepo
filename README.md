@@ -11,3 +11,5 @@ yarn run generate
 yarn run frontend:dev
 yarn run backend:dev
 ```
+
+![alt text](screenshot.png)
