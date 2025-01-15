@@ -1,0 +1,6 @@
+fragment TodoFields on Todo {
+  id
+  title
+  done
+  updatedAt
+}

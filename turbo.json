@@ -1,11 +1,21 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["tsconfig.*.json", ".env.*"],
   "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "generate": {
+      "dependsOn": ["^generate"],
+      "outputs": [
+        "generated/**",
+        "src/generated/**",
+        "src/dsl/syntax/expression.js",
+        "src/pg-emulator/parser/grammer.js"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]

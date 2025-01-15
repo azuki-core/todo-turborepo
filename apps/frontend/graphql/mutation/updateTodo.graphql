@@ -1,0 +1,5 @@
+mutation updateTodo($id: Int!, $done: Boolean!) {
+  updateTodo(id: $id, done: $done) {
+    ...TodoFields
+  }
+}

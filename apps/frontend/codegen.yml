@@ -1,0 +1,10 @@
+schema: './generated/schema.graphql'
+documents: ['./graphql/**/*.graphql']
+generates:
+  ./src/generated/apollo.ts:
+    config:
+      scalars:
+        DateTime: string
+    plugins:
+      - 'typescript'
+      - 'typed-document-node'
