@@ -90,6 +90,7 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/backend/infra",
+    "packages/frontend/client/api"
   ]
 }

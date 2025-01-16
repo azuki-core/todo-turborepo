@@ -1,5 +1,5 @@
 import { titleAtom } from '../atoms/titleState'
-import { FetchTodoDocument, UpdateTodoDocument, DeleteTodoDocument } from '../generated/apollo'
+import { FetchTodoDocument, UpdateTodoDocument, DeleteTodoDocument } from '@todo-turborepo/client-api'
 import { useQuery, useMutation } from '@apollo/client'
 import { useRecoilValue } from 'recoil'
 import { List, Button, Form, Input, Spin, message, Checkbox } from 'antd'

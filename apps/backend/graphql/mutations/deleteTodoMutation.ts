@@ -1,6 +1,6 @@
 import { idArg, intArg, nonNull, nullable } from 'nexus'
 import type { ObjectDefinitionBlock } from 'nexus/dist/core'
-import {prisma} from '../../lib/prisma'
+import { prisma } from '@todo-turborepo/backend-infra'
 
 export const deleteTodoMutation = (t: ObjectDefinitionBlock<'Mutation'>) => {
   t.nullable.field('deleteTodo', {

@@ -1,5 +1,5 @@
 import { list, nonNull, type ObjectDefinitionBlock } from 'nexus/dist/core'
-import {prisma} from '../../lib/prisma'
+import { prisma } from '@todo-turborepo/backend-infra'
 
 export const TodosQuery = (t: ObjectDefinitionBlock<'Query'>) => {
   t.nonNull.field('todos', {

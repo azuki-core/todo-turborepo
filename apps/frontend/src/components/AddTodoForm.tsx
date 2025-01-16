@@ -1,5 +1,5 @@
 import { useMutation } from '@apollo/client'
-import { CreateTodoDocument, FetchTodoDocument } from '../generated/apollo'
+import { CreateTodoDocument, FetchTodoDocument } from '@todo-turborepo/client-api'
 import { useRecoilState } from 'recoil'
 import { titleAtom } from '../atoms/titleState'
 import { Button, Form, Input } from 'antd'
@@ -10,7 +10,6 @@ const AddTodoForm = () => {
     refetchQueries: [{ query: FetchTodoDocument }],
   })
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
     try {
       await createTodo({ variables: { title } })
       setTitle('') // Clear the input field
