@@ -1,9 +1,11 @@
+'use client'
+
 import { titleAtom } from '../atoms/titleState'
 import { FetchTodoDocument, UpdateTodoDocument, DeleteTodoDocument } from '@todo-turborepo/client-api'
 import { useQuery, useMutation } from '@apollo/client'
 import { useRecoilValue } from 'recoil'
 import { List, Button, Form, Input, Spin, message, Checkbox } from 'antd'
-
+import { t } from 'i18next'
 const TodoList: React.FC = () => {
   const { data, loading, error } = useQuery(FetchTodoDocument)
   const [updateTodo] = useMutation(UpdateTodoDocument)
@@ -48,12 +50,14 @@ const TodoList: React.FC = () => {
             <Checkbox checked={todo.done} onChange={() => handleToggleDone(todo.id, todo.done)} />
             <div className="ml-1">{todo.title}</div>
             <Button className="ml-1" type="default" htmlType="submit" onClick={() => handleDelete(todo.id)}>
-              Delete
+              {t(`delete`)}
             </Button>
           </List.Item>
         )}
       />
-      <div className="mt-5">recoil value: {title}</div>
+      <div className="mt-5">
+        {t(`recoil-value`)}: {title}
+      </div>
     </div>
   )
 }

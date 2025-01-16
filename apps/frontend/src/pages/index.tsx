@@ -1,5 +1,8 @@
+'use client'
+
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
 import TodoList from '../components/TodoList'
 import AddTodoForm from '../components/AddTodoForm'
 const Home: NextPage = () => {

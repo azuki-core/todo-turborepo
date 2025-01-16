@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ssr: false,
   transpilePackages: [
     'antd',
     '@ant-design',

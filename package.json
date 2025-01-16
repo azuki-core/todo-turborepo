@@ -6,7 +6,8 @@
     "frontend:dev": "yarn workspace frontend run dev",
     "generate": "turbo run generate",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "i18n:extract": "LC_ALL=ja_JP.utf-8 yarn workspace @todo-turborepo/i18n run extract"
   },
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.4.1",
@@ -91,6 +92,7 @@
   "workspaces": [
     "apps/*",
     "packages/backend/infra",
-    "packages/frontend/client/api"
+    "packages/frontend/client/api",
+    "packages/common/i18n"
   ]
 }

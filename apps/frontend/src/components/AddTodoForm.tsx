@@ -1,9 +1,10 @@
+'use client'
 import { useMutation } from '@apollo/client'
 import { CreateTodoDocument, FetchTodoDocument } from '@todo-turborepo/client-api'
 import { useRecoilState } from 'recoil'
 import { titleAtom } from '../atoms/titleState'
 import { Button, Form, Input } from 'antd'
-
+import { t } from 'i18next'
 const AddTodoForm = () => {
   const [title, setTitle] = useRecoilState(titleAtom)
   const [createTodo] = useMutation(CreateTodoDocument, {
@@ -26,7 +27,7 @@ const AddTodoForm = () => {
         </Form.Item>{' '}
         <Form.Item className="ml-1">
           <Button type="primary" htmlType="submit">
-            Add Todo
+            {t(`add-todo`)}
           </Button>
         </Form.Item>
       </div>
